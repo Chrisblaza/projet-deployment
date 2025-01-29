@@ -303,6 +303,7 @@ JavaScript Code
     justify-content: space-around;
     gap: 20px;
     flex-wrap: wrap;
+    text-decolation:none;
   }
   
   .card {
@@ -313,6 +314,7 @@ JavaScript Code
     width: 300px;
     overflow: hidden;
     transform-style: preserve-3d;
+    text-decoration: none;
   }
   
   .card:hover {
@@ -329,6 +331,7 @@ JavaScript Code
   .card-info {
     padding: 15px;
     text-align: center;
+      text-decoration: none;
   }
   
   .card-info h2 {
@@ -347,6 +350,7 @@ JavaScript Code
     font-size: 1rem;
     color: #666;
     margin-top: 5px;
+    text-decoration: none;
   }
   
   .card-info p.price {
