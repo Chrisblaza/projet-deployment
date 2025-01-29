@@ -118,7 +118,7 @@
   }
   /* Light Mode Styles */
 body.light-mode {
-  background-color: #f4f4f4;
+  background-color: yellow;
   color: #333;
 }
 
