@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+h1 {
+    color: #007BFF;
+}
+
+h2 {
+    margin: 20px 0;
+}
+
+input {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 250px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+}
+
+li span {
+    flex: 1;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #007BFF;
+    font-size: 14px;
+}
+
+.delete-btn {
+    color: #FF5733;
+}
+
+    </style>
+</head>
+<body>
+    <!-- User Registration and Login -->
+    <div id="auth-section">
+        <h1>CRUD Dashboard</h1>
+        <div id="register-form">
+            <h2>Register</h2>
+            <input type="text" id="reg-username" placeholder="Enter Username" required>
+            <input type="password" id="reg-password" placeholder="Enter Password" required>
+            <button id="register-btn">Register</button>
+        </div>
+
+        <div id="login-form">
+            <h2>Login</h2>
+            <input type="text" id="login-username" placeholder="Enter Username" required>
+            <input type="password" id="login-password" placeholder="Enter Password" required>
+            <button id="login-btn">Login</button>
+        </div>
+    </div>
+
+    <!-- Dashboard Section -->
+    <div id="dashboard" style="display: none;">
+        <h2>Welcome, <span id="user-display"></span>!</h2>
+        <button id="logout-btn">Logout</button>
+
+        <h3>Manage Items</h3>
+        <!-- Create Form -->
+        <form id="create-item-form">
+            <input type="text" id="item-name" placeholder="Enter Item Name" required>
+            <button type="submit">Add Item</button>
+        </form>
+
+        <!-- Item List -->
+        <ul id="item-list"></ul>
+    </div>
+
+    <script src="script.js">
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Mock user database
+    const users = [];
+    let currentUser = null;
+    let items = [];
+
+    // DOM Elements
+    const authSection = document.getElementById("auth-section");
+    const registerForm = document.getElementById("register-form");
+    const loginForm = document.getElementById("login-form");
+    const dashboard = document.getElementById("dashboard");
+    const userDisplay = document.getElementById("user-display");
+    const logoutBtn = document.getElementById("logout-btn");
+
+    const regUsername = document.getElementById("reg-username");
+    const regPassword = document.getElementById("reg-password");
+    const registerBtn = document.getElementById("register-btn");
+
+    const loginUsername = document.getElementById("login-username");
+    const loginPassword = document.getElementById("login-password");
+    const loginBtn = document.getElementById("login-btn");
+
+    const createItemForm = document.getElementById("create-item-form");
+    const itemNameInput = document.getElementById("item-name");
+    const itemList = document.getElementById("item-list");
+
+    // Register User
+    registerBtn.addEventListener("click", () => {
+        const username = regUsername.value.trim();
+        const password = regPassword.value.trim();
+
+        if (username && password) {
+            const userExists = users.some(user => user.username === username);
+            if (userExists) {
+                alert("Username already exists. Please choose another.");
+            } else {
+                users.push({ username, password });
+                alert("Registration successful! You can now log in.");
+                regUsername.value = "";
+                regPassword.value = "";
+            }
+        } else {
+            alert("Please fill in both fields.");
+        }
+    });
+
+    // Login User
+    loginBtn.addEventListener("click", () => {
+        const username = loginUsername.value.trim();
+        const password = loginPassword.value.trim();
+
+        const user = users.find(user => user.username === username && user.password === password);
+        if (user) {
+            currentUser = user;
+            userDisplay.textContent = username;
+            authSection.style.display = "none";
+            dashboard.style.display = "block";
+        } else {
+            alert("Invalid username or password.");
+        }
+    });
+
+    // Logout User
+    logoutBtn.addEventListener("click", () => {
+        currentUser = null;
+        authSection.style.display = "block";
+        dashboard.style.display = "none";
+    });
+
+    // Add Item (Create)
+    createItemForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const itemName = itemNameInput.value.trim();
+        if (itemName) {
+            items.push(itemName);
+            itemNameInput.value = "";
+            renderItems();
+        }
+    });
+
+    // Render Items (Read)
+    function renderItems() {
+        itemList.innerHTML = "";
+        items.forEach((item, index) => {
+            const li = document.createElement("li");
+            li.innerHTML = `
+                <span>${item}</span>
+                <button class="edit-btn" onclick="editItem(${index})">Edit</button>
+                <button class="delete-btn" onclick="deleteItem(${index})">Delete</button>
+            `;
+            itemList.appendChild(li);
+        });
+    }
+
+    // Edit Item (Update)
+    window.editItem = function (index) {
+        const newItemName = prompt("Edit item name:", items[index]);
+        if (newItemName !== null && newItemName.trim() !== "") {
+            items[index] = newItemName.trim();
+            renderItems();
+        }
+    };
+
+    // Delete Item (Delete)
+    window.deleteItem = function (index) {
+        if (confirm("Are you sure you want to delete this item?")) {
+            items.splice(index, 1);
+            renderItems();
+        }
+    };
+});
+
+    </script>
+</body>
+</html>

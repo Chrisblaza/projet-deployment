@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fast and Easy Booking</title>
+  <link rel="stylesheet" href="documentary.css">
+  <style>
+    /* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #74b9ff, #a29bfe);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.documentary-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  width: 90%;
+  max-width: 1200px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.content {
+  max-width: 600px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ffeaa7;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #ff7675;
+  color: #fff;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  background: #d63031;
+  transform: translateY(-2px);
+}
+
+.image-container {
+  position: relative;
+  width: 400px;
+  height: 300px;
+}
+
+.car-animation {
+  position: relative;
+  perspective: 1000px;
+}
+
+.car-animation img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  animation: rotateCar 5s infinite linear;
+}
+
+/* Keyframes for Car Animation */
+@keyframes rotateCar {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .documentary-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-container {
+    margin-top: 30px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <section class="documentary-section">
+    <div class="content">
+      <h1>Fast and Easy Booking</h1>
+      <p>
+        At our car rental service, booking your preferred vehicle has never been easier.
+        With a user-friendly online platform, customers can effortlessly browse our vast 
+        collection of vehicles, choose the one that suits their needs, and complete their 
+        booking in just a few clicks.
+      </p>
+      <p>
+        Whether you’re planning a weekend getaway or a business trip, our streamlined 
+        process ensures that you’ll be on the road quickly and without hassle. Enjoy 
+        seamless payment options, real-time availability updates, and personalized 
+        recommendations for the best experience.
+      </p>
+      <p>
+        Our commitment to efficiency and simplicity makes us your trusted partner for 
+        all your car rental needs. Start your journey with us today!
+      </p>
+      <a href="#more-info" class="btn">Read More</a>
+    </div>
+    <div class="image-container">
+      <div class="car-animation">
+        <img src="pazo.png" alt="Car Image">
+      </div>
+    </div>
+  </section>
+  <script src="documentary.js">
+    // JavaScript functionality (optional) for interactivity or enhancements
+document.querySelector('.btn').addEventListener('click', () => {
+  alert('Discover more about our car rental services!');
+});
+
+  </script>
+</body>
+</html>

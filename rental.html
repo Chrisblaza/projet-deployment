@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexible Rental Options</title>
+  <link rel="stylesheet" href="flexible-options.css">
+  <style>
+    /* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #81ecec, #6c5ce7);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.flexible-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  width: 90%;
+  max-width: 1200px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.content {
+  max-width: 600px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ffeaa7;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #fd79a8;
+  color: #fff;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  background: #e84393;
+  transform: translateY(-2px);
+}
+
+.image-container {
+  position: relative;
+  width: 400px;
+  height: 300px;
+}
+
+.car-animation {
+  position: relative;
+  perspective: 1000px;
+}
+
+.car-animation img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  animation: rotateCar 5s infinite alternate ease-in-out;
+}
+
+/* Keyframes for Car Animation */
+@keyframes rotateCar {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .flexible-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-container {
+    margin-top: 30px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <section class="flexible-section">
+    <div class="content">
+      <h1>Flexible Rental Options</h1>
+      <p>
+        Whether you're planning a short weekend getaway or an extended road trip, 
+        we offer flexible rental options to suit your needs. Choose from hourly, daily, 
+        weekly, or even monthly rentals, and enjoy the freedom of a plan that fits your schedule.
+      </p>
+      <p>
+        Our diverse fleet of vehicles ensures that you find the perfect car, whether you need 
+        a compact car for city driving, a spacious SUV for a family trip, or a luxury sedan for 
+        special occasions. With flexible pick-up and drop-off locations, renting a car has 
+        never been more convenient.
+      </p>
+      <p>
+        Experience hassle-free changes or extensions to your booking and take advantage of 
+        competitive pricing designed with you in mind. Your journey, your way—because your 
+        time and comfort matter.
+      </p>
+      <a href="#read-more" class="btn">Learn More</a>
+    </div>
+    <div class="image-container">
+      <div class="car-animation">
+        <img src="22.png" alt="Flexible Rentals">
+      </div>
+    </div>
+  </section>
+  <script src="flexible-options.js">
+    // JavaScript functionality for interactivity
+document.querySelector('.btn').addEventListener('click', () => {
+  alert('Explore more about our flexible rental options!');
+});
+
+  </script>
+</body>
+</html>

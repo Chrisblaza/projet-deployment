@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn More - Car Rental</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.learn-more-section {
+  text-align: center;
+  padding: 50px;
+  background: linear-gradient(135deg, #f9a826, #f04d56);
+  color: white;
+}
+
+.learn-more-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.learn-more-section p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+/* Cars Container */
+.cars-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Car Card */
+.car-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.car-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+.car-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.car-card h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 15px 0 10px;
+}
+
+.car-card p {
+  font-size: 1rem;
+  color: #555;
+  margin: 5px 0;
+}
+
+/* CTA Link */
+.cta-link {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 15px 30px;
+  font-size: 1rem;
+  color: white;
+  background: #0d2538;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.cta-link:hover {
+  background: #f04d56;
+  transform: scale(1.05);
+}
+.learn-more-section {
+  text-align: center;
+  padding: 50px;
+  background: linear-gradient(135deg, #f9a826, #f04d56);
+  color: white;
+}
+
+.learn-more-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.learn-more-section p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+/* Cars Container */
+.cars-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Car Card */
+.car-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  width: 300px;
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.car-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+.car-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.car-card h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 15px 0 10px;
+}
+
+.car-card p {
+  font-size: 1rem;
+  color: #555;
+  margin: 5px 0;
+}
+
+.car-card button {
+  margin: 10px 0;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white;
+  background-color: #f04d56;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.car-card button:hover {
+  background-color: #f9a826;
+}
+
+/* Hidden Details */
+.car-details {
+  display: none;
+  font-size: 0.9rem;
+  margin: 10px 20px;
+  text-align: left;
+}
+
+/* CTA Link */
+.cta-link {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 15px 30px;
+  font-size: 1rem;
+  color: white;
+  background: #0d2538;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.cta-link:hover {
+  background: #f04d56;
+  transform: scale(1.05);
+}
+
+  </style>
+</head>
+<body>
+  <section class="learn-more-section">
+    <h1>Learn More About Our Services</h1>
+    <p>
+      At our car rental service, we prioritize customer satisfaction through fast purchasing options, reliable branding, 
+      and high-quality car design. Whether you need a vehicle for a day, week, or even a year, we offer flexible rental plans tailored to your needs.
+    </p>
+
+    <div class="cars-container">
+      <!-- Car 1 -->
+      <div class="car-card">
+        <img src="8.png" alt="Car 1">
+        <h2>Toyota Corolla</h2>
+        <p>Cost Per Day: $30</p>
+        <p>Cost Per Week: $200</p>
+        <p>Cost Per Month: $800</p>
+        <p>Cost Per Year: $9,600</p>
+      </div>
+
+      <!-- Car 2 -->
+      <div class="car-card">
+        <img src="6.png" alt="Car 2">
+        <h2>Honda Civic</h2>
+        <p>Cost Per Day: $35</p>
+        <p>Cost Per Week: $230</p>
+        <p>Cost Per Month: $900</p>
+        <p>Cost Per Year: $10,800</p>
+      </div>
+
+      <!-- Car 3 -->
+      <div class="car-card">
+        <img src="4.png" alt="Car 3">
+        <h2>BMW X5</h2>
+        <p>Cost Per Day: $60</p>
+        <p>Cost Per Week: $400</p>
+        <p>Cost Per Month: $1,500</p>
+        <p>Cost Per Year: $18,000</p>
+      </div>
+    </div>
+    <section class="learn-more-section">
+    
+  
+      <div class="cars-container">
+        <!-- Car 1 -->
+        <div class="car-card">
+          <img src="55.png" alt="Toyota Corolla">
+          <h2>Toyota Corolla</h2>
+          <p>Cost Per Day: $30</p>
+          <p>Cost Per Week: $200</p>
+          <p>Cost Per Month: $800</p>
+          <button onclick="showDetails('car1')">Read More</button>
+          <div id="car1" class="car-details">
+            <p>The Toyota Corolla is a compact car with excellent fuel efficiency, perfect for city travel.</p>
+          </div>
+        </div>
+  
+        <!-- Car 2 -->
+        <div class="car-card">
+          <img src="3.png" alt="Honda Civic">
+          <h2>Honda Civic</h2>
+          <p>Cost Per Day: $35</p>
+          <p>Cost Per Week: $230</p>
+          <p>Cost Per Month: $900</p>
+          <button onclick="showDetails('car2')">Read More</button>
+          <div id="car2" class="car-details">
+            <p>The Honda Civic offers a stylish design, reliable performance, and advanced safety features.</p>
+          </div>
+        </div>
+  
+        <!-- Car 3 -->
+        <div class="car-card">
+          <img src="4.png" alt="BMW X5">
+          <h2>BMW X5</h2>
+          <p>Cost Per Day: $60</p>
+          <p>Cost Per Week: $400</p>
+          <p>Cost Per Month: $1,500</p>
+          <button onclick="showDetails('car3')">Read More</button>
+          <div id="car3" class="car-details">
+            <p>Experience luxury and power with the BMW X5, designed for ultimate comfort and performance.</p>
+          </div>
+        </div>
+  
+        <!-- Car 4 -->
+        <div class="car-card">
+          <img src="99.png" alt="Tesla Model 3">
+          <h2>Tesla Model 3</h2>
+          <p>Cost Per Day: $70</p>
+          <p>Cost Per Week: $500</p>
+          <p>Cost Per Month: $2,000</p>
+          <button onclick="showDetails('car4')">Read More</button>
+          <div id="car4" class="car-details">
+            <p>The Tesla Model 3 combines cutting-edge electric technology with exceptional range and performance.</p>
+          </div>
+        </div>
+  
+        <!-- Car 5 -->
+        <div class="car-card">
+          <img src="5.png" alt="Ford Mustang">
+          <h2>Ford Mustang</h2>
+          <p>Cost Per Day: $50</p>
+          <p>Cost Per Week: $350</p>
+          <p>Cost Per Month: $1,200</p>
+          <button onclick="showDetails('car5')">Read More</button>
+          <div id="car5" class="car-details">
+            <p>The Ford Mustang is an iconic sports car with a powerful engine and dynamic performance.</p>
+          </div>
+        </div>
+      </div>
+  
+      <a href="https://yourcarrentalwebsite.com" class="cta-link" target="_blank">Visit Our Website</a>
+    </section>
+    <script src="scripts.js">
+      function showDetails(carId) {
+  const details = document.getElementById(carId);
+  if (details.style.display === "block") {
+    details.style.display = "none";
+  } else {
+    details.style.display = "block";
+  }
+}
+
+    </script>
+
+    
+  </section>
+  <script src="scripts.js">
+    // Optional JavaScript for Dynamic Effects
+console.log("Learn More section loaded successfully!");
+
+  </script>
+</body>
+</html>

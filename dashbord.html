@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard CRUD</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <style>
+    /* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f0f4f8;
+  color: #333;
+}
+
+header.dashboard-header {
+  background: #0984e3;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header.dashboard-header nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 1rem;
+}
+
+main.dashboard-main {
+  padding: 20px;
+}
+
+.crud-section {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.crud-section h2 {
+  margin-bottom: 20px;
+  color: #0984e3;
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  flex: 1;
+  min-width: 250px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button.btn {
+  background: #0984e3;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button.btn:hover {
+  background: #74b9ff;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table th {
+  background: #0984e3;
+  color: #fff;
+}
+
+.actions button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.actions .edit {
+  background: #00b894;
+  color: #fff;
+}
+
+.actions .delete {
+  background: #d63031;
+  color: #fff;
+}
+
+footer.dashboard-footer {
+  text-align: center;
+  padding: 10px;
+  background: #0984e3;
+  color: #fff;
+}
+
+  </style>
+</head>
+<body>
+  <header class="dashboard-header">
+    <h1>Dashboard</h1>
+    <nav>
+      <a href="login.html">Login</a>
+      <a href="signup.html">Sign Up</a>
+    </nav>
+  </header>
+
+  <main class="dashboard-main">
+    <section class="crud-section">
+      <h2>User Management</h2>
+      <form id="userForm">
+        <div class="form-group">
+          <label for="username">Name:</label>
+          <input type="text" id="username" placeholder="Enter user name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" placeholder="Enter user email" required>
+        </div>
+        <button type="submit" class="btn">Add User</button>
+      </form>
+
+      <table id="userTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- User rows will be dynamically added here -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="dashboard-footer">
+    <p>&copy; 2025 Car Rental Dashboard. All rights reserved.</p>
+  </footer>
+
+  <script src="dashboard.js">
+    const userForm = document.getElementById('userForm');
+const userTableBody = document.querySelector('#userTable tbody');
+
+let users = []; // Array to hold user data
+let editingIndex = null;
+
+// Handle form submission
+userForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const name = document.getElementById('username').value;
+  const email = document.getElementById('email').value;
+
+  if (editingIndex !== null) {
+    // Update existing user
+    users[editingIndex] = { name, email };
+    editingIndex = null;
+    userForm.reset();
+  } else {
+    // Add new user
+    users.push({ name, email });
+  }
+
+  renderTable();
+});
+
+// Render the table
+function renderTable() {
+  userTableBody.innerHTML = '';
+
+  users.forEach((user, index) => {
+    const row = document.createElement('tr');
+
+    row.innerHTML = `
+      <td>${user.name}</td>
+      <td>${user.email}</td>
+      <td class="actions">
+        <button class="edit" onclick="editUser(${index})">Edit</button>
+        <button class="delete" onclick="deleteUser(${index})">Delete</button>
+      </td>
+    `;
+
+    userTableBody.appendChild(row);
+  });
+}
+
+// Edit user
+function editUser(index) {
+  editingIndex = index;
+  const user = users[index];
+
+  document.getElementById('username').value = user.name;
+  document.getElementById('email').value = user.email;
+}
+
+// Delete user
+function deleteUser(index) {
+  users.splice(index, 1);
+  renderTable();
+}
+
+// Initial render
+renderTable();
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,428 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>car rent</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Nav Bar</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo"><img src="logo.png" alt="" width="15%" height="20%"></div>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="contact us.html">Contact Us</a></li>
+      <li><a href="about us.html">About Us</a></li>
+      <li><a href="service.html">Service</a></li>
+      <li><a href="login.html">login</a></li>
+    </ul>
+       
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+
+<script>
+  function toggleTheme() {
+    const body = document.body;
+    body.classList.toggle('dark-mode');
+    const themeToggle = document.querySelector('.theme-toggle');
+    if (body.classList.contains('dark-mode')) {
+      themeToggle.textContent = '☀️';
+    } else {
+      themeToggle.textContent = '🌙';
+    }
+  }
+</script>
+
+  </nav>
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.classList.toggle('active');
+    }
+  </script>
+  <script src="script.js">
+    // This script adds a hover effect to the car cards for 3D animation and interactivity
+
+// Select all car cards
+const carCards = document.querySelectorAll('.card');
+
+// Add hover effect for 3D rotation
+carCards.forEach(card => {
+card.addEventListener('mouseenter', () => {
+card.style.transform = "rotateY(15deg)";
+});
+
+card.addEventListener('mouseleave', () => {
+card.style.transform = "rotateY(0deg)";
+});
+});
+
+</script>
+      
+</body>
+</html>
+<div class="menu">
+    <h1 class="bd"><em>WELCOME TO CAR RENTAL</em></h1> <section>
+    </div>
+        <header>
+            
+          
+          <section class="car-cards">
+            
+            <div class="card-container">
+              <!-- Card 1 -->
+              <div class="card">
+                <img src="3.png" alt="Car 1">
+                <h3>Toyota Corolla</h3>
+                <p>Price: $50/day</p>
+                <p>Brand: Toyota</p>
+                <button class="learn-more"><a href="learn.html">learn more</a></button>
+              </div>
+              <!-- Card 2 -->
+              <div class="card">
+                <img src="22.png" alt="Car 2">
+                <h3>Honda Civic</h3>
+                <p>Price: $55/day</p>
+                <p>Brand: Honda</p>
+                <button class="learn-more"><a href="learn.html">learn more</a></button>
+              </div>
+              <!-- Card 3 -->
+              <div class="card">
+                <img src="9.png" alt="Car 3">
+                <h3>Ford Focus</h3>
+                <p>Price: $60/day</p>
+                <p>Brand: Ford</p>
+                <button class="learn-more"><a href="learn.html">learn more</a></button>
+              </div>
+              <!-- Card 4 -->
+              <div class="card">
+                <img src="1.png" alt="Car 4">
+                <h3>BMW 3 Series</h3>
+                <p>Price: $80/day</p>
+                <p>Brand: BMW</p>
+                <button class="learn-more"><a href="learn.html">learn more</a></button>
+              </div>
+              <!-- Card 5 -->
+              <div class="card">
+                <img src="4.png" alt="Car 5">
+                <h3>Audi A4</h3>
+                <p>Price: $85/day</p>
+                <p>Brand: Audi</p>
+                <button class="learn-more"><a href="learn.html">learn more</a></button>
+              </div>
+              <!-- Card 6 -->
+              <div class="card">
+                <img src="8.png" alt="Car 6">
+                <h3>Mercedes C-Class</h3>
+                <p>Price: $90/day</p>
+                <p>Brand: Mercedes</p>
+                <button class="learn-more"><a href="learn.html">learn more </a></button>
+              </div>
+            </div>
+          </section>
+          <script src="script.js">
+            document.addEventListener('DOMContentLoaded', () => {
+  const buttons = document.querySelectorAll('.learn-more');
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      alert('Redirecting to more information about this car!');
+    });
+  });
+});
+
+          </script>
+
+                  <section>
+                    <div class="car-gallery">
+                        <!-- Card 1 -->
+                        <div class="car-card">
+                          <img src="7.png" alt="Ferrari 488">
+                          <div class="card-content">
+                            <h2>Ferrari 488</h2>
+                            <p class="price">$250,000</p>
+                            <p>Experience unmatched speed and design with the Ferrari 488.</p>
+                            <a href="learn.html" class="btn">Learn More</a>
+                          </div>
+                        </div>
+                  
+                        <!-- Card 2 -->
+                        <div class="car-card">
+                          <img src="5.png" alt="Lamborghini Huracan">
+                          <div class="card-content">
+                            <h2>Lamborghini Huracan</h2>
+                            <p class="price">$280,000</p>
+                            <p>A perfect blend of luxury and performance.</p>
+                            <a href="learn.html" class="btn">Learn More</a>
+                          </div>
+                        </div>
+                  
+                        <!-- Card 3 -->
+                        <div class="car-card">
+                          <img src="4.png" alt="Porsche 911 Turbo">
+                          <div class="card-content">
+                            <h2>Porsche 911 Turbo</h2>
+                            <p class="price">$130,000</p>
+                            <p>The epitome of timeless design and speed.</p>
+                            <a href="learn.html" class="btn">Learn More</a>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                    <section class="services-section">
+                       <div class="container">
+                         <h1 class="section-title">Our Car Rental Services</h1>
+                         <div class="service-card">
+                           <div class="service-content">
+                             <h2>Fast and Easy Booking</h2>
+                             <p>
+                               Experience a seamless online booking process that allows you to reserve your desired vehicle within minutes.
+                               Choose from a wide range of cars tailored to suit your needs.
+                             </p>
+                             <a href="read more.html" class="read-more-btn">Read More</a>
+                           </div>
+                         </div>
+                   
+                         <div class="service-card">
+                           <div class="service-content">
+                             <h2>Secure Transactions</h2>
+                             <p>
+                               Enjoy safe and encrypted payment options for your car rental transactions. We prioritize your data privacy and offer multiple payment methods.
+                             </p>
+                             <a href="read more.html" class="read-more-btn">Read More</a>
+                           </div>
+                         </div>
+                   
+                         <div class="service-card">
+                           <div class="service-content">
+                             <h2>Flexible Rental Options</h2>
+                             <p>
+                               Choose from hourly, daily, or weekly rental plans. We cater to both individual and corporate needs with competitive pricing.
+                             </p>
+                             <a href="read more.html" class="read-more-btn">Read More</a>
+                           </div>
+                         </div>
+                       </div>
+                       
+                    
+
+  </script>
+                      <script src="partners.js">
+                        // Optional: Add functionality for interactivity
+document.querySelectorAll('.partner-card').forEach(card => {
+  card.addEventListener('click', () => {
+    alert('Contact this partner for more information!');
+  });
+});
+                     </script>
+                      <!-- FontAwesome for social media icons -->
+                      <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+                     </section>
+                     
+
+                     <section class="team-section">
+                      <h1>Meet Our Team</h1>
+                      <div class="card-container">
+                        <!-- Card 1 -->
+                        <div class="team-card">
+                          <div class="card-image">
+                            <img src="vvvv.jpg" alt="CEO">
+                          </div>
+                          <div class="card-content">
+                            <h2>Ndayisaba Patrick</h2>
+                            <p><strong>Department:</strong> CEO</p>
+                            <p><strong>Email:</strong> <a href="mailto:john.doe@carrental.com">ndayisabapatrick75@gmail.com</a></p>
+                            <p><strong>Phone:</strong> +250786540493</p>
+                          </div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="team-card">
+                          <div class="card-image">
+                            <img src="yy (2).png" alt="Branding">
+                          </div>
+                          <div class="card-content">
+                            <h2>Vainquer Justice</h2>
+                            <p><strong>Department:</strong> Branding</p>
+                            <p><strong>Email:</strong> <a href="mailto:jane.smith@carrental.com">vainquerjustice@gmail.com</a></p>
+                            <p><strong>Phone:</strong> +250785852636</p>
+                          </div>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="team-card">
+                          <div class="card-image">
+                            <img src="GG.png" alt="Designer">
+                          </div>
+                          <div class="card-content">
+                            <h2>Niyonkuru Paul</h2>
+                            <p><strong>Department:</strong> Designer</p>
+                            <p><strong>Email:</strong> <a href="mailto:emily.brown@carrental.com">niyonkurupaul41@gmail.com</a></p>
+                            <p><strong>Phone:</strong> +250785169353</p>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                    <section class="how-we-work">
+                      <h1>How We Work</h1>
+                      <p class="intro">
+                        Our car rental service is designed to make your travel experience seamless, efficient, and stress-free. Here’s how we work:
+                      </p>
+                      <p class="details">
+                        At our car rental company, we believe in providing the highest quality of service to ensure your satisfaction. 
+                        <br> **1. Booking Made Easy**: You can book your car online through our user-friendly platform or by contacting our customer support team. Simply choose your desired car model, rental period, and location, and confirm your booking within minutes. <br> 
+                        **2. Flexible Pickup Options**: Whether you’re at the airport, train station, or your home, our team ensures that your selected car is delivered promptly to your preferred location. <br> 
+                        **3. Wide Variety of Vehicles**: From compact cars and sedans to SUVs and luxury vehicles, our fleet caters to all types of travel needs. Our vehicles are regularly serviced and sanitized for your safety and comfort. <br> 
+                        **4. Transparent Pricing**: With no hidden fees or unexpected charges, we provide clear and competitive pricing for all our services. You can rent a car by the day, week, or month, depending on your requirements. <br> 
+                        **5. Support On-the-Go**: Our 24/7 customer support ensures that you’re never alone during your journey. Whether you need roadside assistance, trip advice, or an extension of your rental period, our team is always available to help. <br> 
+                        **6. Easy Returns**: Returning your rental car is as simple as picking it up. Choose a drop-off location, and our team will handle the rest. <br>  
+                        Discover the joy of hassle-free car rental services with us today!
+                      </p>
+                    </section>
+
+
+                   
+          
+              <section class="hero">
+                  <h2>Welcome to CarConnect</h2>
+                  <p>Explore the world of cars! Buy from trusted sellers like Alibaba & eBay, or rent from top car rental services.</p>
+                  <button class="cta" id="shop-now-btn">Shop Now</button>
+              </section>
+          
+              <section id="about" class="section">
+                  <h2>About Us</h2>
+                  <p>
+                      CarConnect is your one-stop solution for all car needs. Whether you're looking to purchase a car from trusted sellers like Alibaba and eBay 
+                      or rent a car for your next adventure, we've got you covered. Our platform bridges the gap between buyers, sellers, and renters, ensuring 
+                      a seamless experience.
+                  </p>
+              </section>
+          
+              <section id="shop" class="section">
+                  <h2>Buy Cars Online</h2>
+                  <div class="card-container">
+                      <div class="card">
+                          <h3>Alibaba</h3>
+                          <p>Find new and used cars from Alibaba's trusted network.</p>
+                          <a href="https://www.alibaba.com" target="_blank" class="btn">Visit Alibaba</a>
+                      </div>
+                      <div class="card">
+                          <h3>eBay</h3>
+                          <p>Shop cars and accessories with secure payment options on eBay.</p>
+                          <a href="https://www.ebay.com" target="_blank" class="btn">Visit eBay</a>
+                      </div>
+                  </div>
+              </section>
+          
+              <section id="rental" class="section">
+                  <h2>Car Rental Services</h2>
+                  <div class="card-container">
+                      <div class="card">
+                          <h3>Rental 360</h3>
+                          <p>Flexible car rentals for your travel needs.</p>
+                          <a href="#" class="btn">View Rentals</a>
+                      </div>
+                      <div class="card">
+                          <h3>DriveEasy</h3>
+                          <p>Affordable and easy car rentals available nationwide.</p>
+                          <a href="#" class="btn">View Rentals</a>
+                      </div>
+                  </div>
+              </section>
+
+              <script src="script.js">
+                // Smooth scroll for navigation links
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = e.target.getAttribute('href').substring(1);
+        document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+    });
+});
+
+// Shop Now button scroll to shop section
+document.getElementById('shop-now-btn').addEventListener('click', () => {
+    document.getElementById('shop').scrollIntoView({ behavior: 'smooth' });
+});
+
+              </script>
+          
+                    <script src="script.js">
+                      document.addEventListener('DOMContentLoaded', () => {
+  const details = document.querySelector('.details');
+  setTimeout(() => {
+    details.style.animation = 'zoomIn 2s ease forwards';
+  }, 500);
+});
+
+                    </script>
+                    <script src="scripts.js">
+                      // Optional: Add dynamic effects for hovering or clicking
+console.log("Team cards loaded successfully!");
+
+                    </script>
+   
+   
+                      <footer class="footer">
+                        <div class="footer-container">
+                          <!-- Contact Section -->
+                          <div class="footer-contact">
+                            <h3>Contact Us</h3>
+                            <p><strong>Email:</strong> ndayisabapatrick75@gmail.com</p>
+                            <p><strong>Phone:</strong> +250786540493</p>
+                            <a href="https://www.google.com/maps" target="_blank" class="map-link">View Location on Map</a>
+                          </div>
+                    
+                          <!-- Social Media Section -->
+                          <div class="footer-social">
+                            <h3>Follow Us</h3>
+                            <a href="#" class="social-icon">Facebook</a>
+                            <a href="#" class="social-icon">Twitter</a>
+                            <a href="#" class="social-icon">Instagram</a>
+                            <a href="#" class="social-icon">LinkedIn</a>
+                          </div>
+                    
+                          <!-- Send Message Section -->
+                          <div class="footer-message">
+                            <h3>Send Us a Message</h3>
+                            <form>
+                              <input type="text" placeholder="Your Name" required>
+                              <input type="email" placeholder="Your Email" required>
+                              <textarea placeholder="Your Message" rows="4" required></textarea>
+                              <button type="submit">Send Message</button>
+                            </form>
+                          </div>
+                        </div>
+                        <div class="footer-bottom">
+                          <p>&copy; 2025 Car Rent. All rights reserved.</p>
+                        </div>
+                      </footer>
+                    </div>
+                    
+                
+                     
+                        
+                        </body>
+                        </html>
+                    
+  
+</body>
+</html>
+      
+       
+          
+            
+        </section>
+        

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Rental Services</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #e3ffe7, #d9e7ff);
+  color: #333;
+}
+
+/* Section Styles */
+.services-section, .details-section {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-title, h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #2a71d0;
+  margin-bottom: 40px;
+}
+
+/* Card Styles */
+.service-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.service-card h2 {
+  color: #2a71d0;
+}
+
+.read-more-btn, .back-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background: #2a71d0;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.read-more-btn:hover, .back-btn:hover {
+  background: #1d4b8f;
+  transform: scale(1.05);
+}
+
+/* Detail Page Styles */
+.service-detail {
+  margin-bottom: 30px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-detail h2 {
+  color: #2a71d0;
+  margin-bottom: 10px;
+}
+
+  </style>
+</head>
+<body>
+  <section class="services-section">
+    <div class="container">
+      <h1 class="section-title">Our Car Rental Services</h1>
+      <div class="service-card">
+        <h2>Fast and Easy Booking</h2>
+        <p>
+          Experience a seamless online booking process that allows you to reserve your desired vehicle within minutes.
+        </p>
+        <a href="documentary.html" class="read-more-btn">Read More</a>
+      </div>
+
+      <div class="service-card">
+        <h2>Secure Transactions</h2>
+        <p>
+          Enjoy safe and encrypted payment options for your car rental transactions. We prioritize your data privacy.
+        </p>
+        <a href="secure.html" class="read-more-btn">Read More</a>
+      </div>
+
+      <div class="service-card">
+        <h2>Flexible Rental Options</h2>
+        <p>
+          Choose from hourly, daily, or weekly rental plans. We cater to both individual and corporate needs.
+        </p>
+        <a href="rental.html" class="read-more-btn">Read More</a>
+      </div>
+    </div>
+  </section>
+  <section class="details-section">
+    <div class="container">
+      <h1>Service Details</h1>
+
+      <!-- Fast and Easy Booking -->
+      <article id="fast-booking" class="service-detail">
+        <h2>Fast and Easy Booking</h2>
+        <p>
+          Our online booking system is designed to be user-friendly and efficient. Select your car, pick your rental dates,
+          and confirm your booking—all in a few clicks. No queues, no hassle, just fast service at your fingertips.
+        </p>
+      </article>
+
+      <!-- Secure Transactions -->
+      <article id="secure-transactions" class="service-detail">
+        <h2>Secure Transactions</h2>
+        <p>
+          We use state-of-the-art encryption technologies to protect your payment information. Choose from various payment
+          methods, including credit cards, debit cards, and digital wallets, ensuring a secure and stress-free transaction.
+        </p>
+      </article>
+
+      <!-- Flexible Rental Options -->
+      <article id="flexible-options" class="service-detail">
+        <h2>Flexible Rental Options</h2>
+        <p>
+          We offer flexible rental plans tailored to your needs. Whether you need a car for a few hours, a day, or a week,
+          our plans are designed to provide convenience and cost-effectiveness for all customers.
+        </p>
+      </article>
+
+      <a href="index.html" class="back-btn">Back to Services</a>
+    </div>
+  </section>
+</body>
+</html>
